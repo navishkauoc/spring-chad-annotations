@@ -2,14 +2,20 @@ package com.navishka.springdemo;
 
 public class SwimCoach implements Coach {
 
+	private FortuneService fortuneService;
+	
+	public SwimCoach(FortuneService theFortuneService) {
+		fortuneService = theFortuneService;
+	}
+	
 	@Override
 	public String getDailyWorkout() {
-		return null;
+		return "Swim for 1000 meters";
 	}
 
 	@Override
 	public String getDailyFortune() {
-		return null;
+		return fortuneService.getFortune();
 	}
 
 }
